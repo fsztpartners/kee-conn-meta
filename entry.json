@@ -1,0 +1,34 @@
+{
+  "kind": "connection",
+  "publisher": "blue-ledger-media",
+  "provider": "meta-graph",
+  "display_name": "Meta Pages",
+  "description": "Facebook Pages via the Meta Graph API — list the pages you manage, read their posts, and publish new ones.",
+  "category": "social",
+  "auth_kind": "oauth2",
+  "sdk_version": "0.2.0",
+  "entrypoint": "src/index.ts",
+  "allowed_domains": ["graph.facebook.com", "www.facebook.com"],
+  "env": ["META_APP_ID", "META_APP_SECRET"],
+  "data_handling": "Reads the connected user's managed pages and those pages' posts; publishes posts agents compose. Personal profile data beyond id/name is never read.",
+  "operations": [
+    {
+      "name": "pages.get",
+      "readWrite": "read",
+      "idempotent": true,
+      "description": "Pages the connected account manages"
+    },
+    {
+      "name": "page-posts.list",
+      "readWrite": "read",
+      "idempotent": true,
+      "description": "Recent posts on a managed page"
+    },
+    {
+      "name": "page-posts.create",
+      "readWrite": "write",
+      "idempotent": false,
+      "description": "Publish a post to a managed page"
+    }
+  ]
+}

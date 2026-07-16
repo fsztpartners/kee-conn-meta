@@ -1,0 +1,11 @@
+{
+  "name": "kee-conn-meta",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A keemakr marketplace connector.",
+  "dependencies": {
+    "@keemakr/operator-sdk": "^0.2.0",
+    "zod": "^4.4.3"
+  }
+}
